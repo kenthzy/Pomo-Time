@@ -41,6 +41,7 @@ body {
     display: flex;
     gap: 1rem; 
     align-items: baseline;
+    cursor: pointer;
   }
 .fa-wand-magic:hover, .fa-book:hover {
     color: var(--text-color);
