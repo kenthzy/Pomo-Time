@@ -20,12 +20,22 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+function playClickSound() {
+  const clickSound = new Audio('/Pomo-Time/assets/sound/click.mp3');
+  clickSound.play();
+}
+
+document.querySelectorAll('.button-action .btn, .button-mode .btn').forEach(button => {
+  button.addEventListener('click', playClickSound);
+});
+
 function startTimer() {
   const alarmSound = new Audio('/Pomo-Time/assets/sound/bell.mp3');
   alarmSound.preload = "auto";
 
   if (!isRunning) {
     isRunning = true;
+    document.querySelector('.button-action .btn:nth-child(1)').textContent = 'pause'; 
     timer = setInterval(() => {
       if (timeLeft > 0) {
         timeLeft--;
@@ -37,6 +47,8 @@ function startTimer() {
         handleSessionCompletion();
       }
     }, 1000);
+  } else {
+    pauseTimer();
   }
 }
 
@@ -44,12 +56,12 @@ function handleSessionCompletion() {
   if (currentMode === 'pomodoro') {
     pomodoroCount++;
     if (pomodoroCount % 4 === 0) {
-      setLongBreak(); 
+      setLongBreak();
     } else {
-      setShortBreak(); 
+      setShortBreak();
     }
   } else if (currentMode === 'shortBreak' || currentMode === 'longBreak') {
-    setPomodoro(); 
+    setPomodoro();
   }
 }
 
@@ -59,14 +71,16 @@ function setPomodoro() {
   isRunning = false;
   timeLeft = 25 * 60;
   updateTimerDisplay();
+  document.querySelector('.button-action .btn:nth-child(1)').textContent = 'start';
 }
 
 function setShortBreak() {
   currentMode = 'shortBreak';
   clearInterval(timer);
-  isRunning = false; 
+  isRunning = false;
   timeLeft = 5 * 60;
   updateTimerDisplay();
+  document.querySelector('.button-action .btn:nth-child(1)').textContent = 'start';
 }
 
 function setLongBreak() {
@@ -75,11 +89,14 @@ function setLongBreak() {
   isRunning = false;
   timeLeft = 15 * 60;
   updateTimerDisplay();
+  document.querySelector('.button-action .btn:nth-child(1)').textContent = 'start'; 
 }
 
 function pauseTimer() {
   if (isRunning) {
     clearInterval(timer);
+    isRunning = false;
+    document.querySelector('.button-action .btn:nth-child(1)').textContent = 'start'; 
   }
 }
 
@@ -97,10 +114,8 @@ function resetTimer() {
   }
 }
 
-
 document.querySelector('.button-action .btn:nth-child(1)').addEventListener('click', startTimer);
 document.querySelector('.button-action .btn:nth-child(2)').addEventListener('click', resetTimer);
-document.querySelector('.button-action .btn:nth-child(3)').addEventListener('click', pauseTimer);
 
 document.querySelector('.button-mode .btn:nth-child(1)').addEventListener('click', setPomodoro);
 document.querySelector('.button-mode .btn:nth-child(2)').addEventListener('click', setShortBreak);
@@ -110,8 +125,7 @@ updateTimerDisplay();
 
 
 
-
-let isDarkMode = false;
+let isNewMode = false;
 let primaryBackgroundColor = "#55705A";  
 let primaryColor = "#E48873";             
 let secondaryColor = "#ECDCCB";           
@@ -123,7 +137,7 @@ let toggleThemeButton = document.querySelector("#toggle-theme-button");
 
 toggleThemeButton.addEventListener("click", toggleTheme);
 
-function toggleLightMode() {
+function toggleCurrentMode() {
 
   primaryBackgroundColor = "#55705A";  
   primaryColor = "#E48873";
@@ -145,7 +159,7 @@ function toggleLightMode() {
   document.body.style.backgroundColor = primaryBackgroundColor;
 }
 
-function toggleDarkMode() {
+function toggleNewMode() {
   
   primaryBackgroundColor = "#E48873";  
   primaryColor = "#55705A";            
@@ -169,20 +183,20 @@ function toggleDarkMode() {
 }
 
 function toggleTheme() {
-  if (isDarkMode) {
-      isDarkMode = false;
-      toggleLightMode();
+  if (isNewMode) {
+      isNewMode = false;
+      toggleCurrentMode();
   } else {
-      isDarkMode = true;
-      toggleDarkMode();
+     isNewMode = true;
+      toggleNewMode();
   }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (isDarkMode) {
-      toggleDarkMode();
+  if (isNewMode) {
+      toggleNewMode();
   } else {
-      toggleLightMode();
+      toggleCurrentMode();
   }
 });
 
