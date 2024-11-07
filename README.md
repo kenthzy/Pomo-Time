@@ -1,4 +1,4 @@
-# PomoTime
+# PomoTime 🍅
 
 ### Objective
 To provide a pomodoro timer for everyone to improve productivity by breaking work 
