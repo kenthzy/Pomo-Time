@@ -79,12 +79,29 @@ body {
     border: none;
     color: var(--text-color);
 }
+.btn:hover{
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+.btn-sm {
+    border: none;
+    color: var(--text-color);
+}
 .btn-sm:hover {
     background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 .button-action {
     display: flex;
     justify-content: center;
+}
+.btn-sm:active {
+    background-color: var(--secondary-color)!important;
+    color: var(--text-color)!important;
+}
+.btn:active {
+    background-color: var(--secondary-color)!important;
+    color: var(--text-color)!important;
 }
 .music-track {
     display: flex;
