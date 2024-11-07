@@ -79,6 +79,16 @@ function setLongBreak() {
   updateTimerDisplay();
 }
 
+function updateTimerDisplay() {
+  const formattedTime = formatTime(timeLeft);
+  document.querySelector('.time-text p').textContent = formattedTime;
+  document.title = `${formattedTime} - ${capitalize(currentMode)}`; 
+}
+
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 document.querySelector('.button-action .btn:nth-child(1)').addEventListener('click', startTimer);
 document.querySelector('.button-action .btn:nth-child(2)').addEventListener('click', resetTimer);
 document.querySelector('.button-action .btn:nth-child(3)').addEventListener('click', pauseTimer);
