@@ -106,7 +106,7 @@ footer {
 a {
     color: var(--secondary-color);
 }
-a:hover {
+a:hover, i:hover {
     color: var(--text-color);
 }
 
