@@ -14,6 +14,10 @@ function updateTimerDisplay() {
 }
 
 function startTimer() {
+  
+const alarmSound = new Audio('/Pomo-Time/assets/sound/bell.mp3');
+alarmSound.preload = "auto";
+  
   if (!isRunning) {
     isRunning = true;
     timer = setInterval(() => {
@@ -21,11 +25,9 @@ function startTimer() {
         timeLeft--;
         updateTimerDisplay();
       } else {
+        alarmSound.play();
         clearInterval(timer);
         isRunning = false;
-
-        const alarmSound = new Audio('assets/sound/bell.mp3');
-        alarmSound.play();
         resetTimer();
       }
     }, 1000);
