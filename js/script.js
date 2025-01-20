@@ -30,7 +30,7 @@ document.querySelectorAll('.button-action .btn, .button-mode .btn').forEach(butt
 });
 
 function startTimer() {
-  const alarmSound = new Audio('/Pomo-Time/assets/sound/bell.mp3');
+  const alarmSound = new Audio('/assets/sound/bell.mp3');
   alarmSound.preload = "auto";
 
   if (!isRunning) {
