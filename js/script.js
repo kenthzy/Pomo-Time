@@ -21,7 +21,7 @@ function capitalize(str) {
 }
 
 function playClickSound() {
-  const clickSound = new Audio('/Pomo-Time/assets/sound/click.mp3');
+  const clickSound = new Audio('/assets/sound/click.mp3');
   clickSound.play();
 }
 
