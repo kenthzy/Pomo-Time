@@ -32,22 +32,48 @@
   <main>
     <div class="main-content">
     <div class="button-mode">
-        <button type="button" class="btn btn-outline-success">Pomodoro</button>
-        <button type="button" class="btn btn-outline-primary">Short Break</button>
-        <button type="button" class="btn btn-outline-danger">Long Break</button>
+        <button type="button" class="btn btn-outline-success btx">Pomodoro</button>
+        <button type="button" class="btn btn-outline-primary btx">Short Break</button>
+        <button type="button" class="btn btn-outline-danger btx">Long Break</button>
     </div>
     <div class="time-text">
         <p>01:23</p>
     </div>
     <div class="button-action">
-        <button type="button" class="btn btn-outline-warning btn-sm">start</button>
-        <button type="button" class="btn btn-outline-warning btn-sm">reset</button>
+        <button type="button" class="btn btn-outline-warning btn-sm btx">start</button>
+        <button type="button" class="btn btn-outline-warning btn-sm btx">reset</button>
     </div>
 </div>
-<div class="music-track">
-  <iframe src="https://open.spotify.com/embed/playlist/4Zjli1P13J5mmSCD5iKAXK?utm_source=generator"  frameBorder="0"  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  
+
+<!-- Task Manager -->
+<div class="task-manager">
+  <div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow bg-transparent">
+                <div class="card-header bg-transparent text-white">
+                    <h1 class="h4 mb-0">Tasks</h1>
+                </div>
+                <div class="card-body">
+                    <form id="taskForm" class="mb-4">
+                        <div class="input-group mb-3">
+                            <input type="text" id="taskInput" class="form-control" placeholder="Enter a new task" required>
+                            <select id="prioritySelect" class="form-select" style="max-width: 130px;">
+                                <option value="low">Low</option>
+                                <option value="medium" selected>Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary">Add Task</button>
+                        </div>
+                    </form>
+                    <ul id="taskList" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+</div>
+  
 
   </main>
   <script src="js/script.js"></script>

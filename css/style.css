@@ -67,7 +67,7 @@ body {
     display: flex;
     flex-direction: row;    
 }
-.btn {
+.btx{
     margin: 10px;
     border: none;
     color: var(--text-color);
@@ -143,4 +143,31 @@ a:hover, i:hover {
 }
 .guide-book a{
     color: var(--text-color);
+}
+
+/*Task Manager*/
+.task-manager .card {
+    background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Light border for distinction */
+}
+
+.task-manager .card-header {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black for contrast */
+    color: white; /* Ensure text is readable */
+}
+
+.task-manager .form-control,
+.task-manager .form-select,
+.task-manager .btn {
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.task-manager .list-group {
+    background-color: rgba(255, 255, 255, 0.6); /* Slightly more transparent */
+}
+
+.task-manager .list-group-item {
+    background-color: rgba(255, 255, 255, 0.8); /* Ensure tasks are distinguishable */
+    border: 1px solid rgba(200, 200, 200, 0.5); /* Subtle borders */
 }

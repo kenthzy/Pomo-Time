@@ -200,3 +200,63 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+/* Task Manager */
+
+document.addEventListener('DOMContentLoaded', () => {
+  const taskForm = document.getElementById('taskForm');
+  const taskInput = document.getElementById('taskInput');
+  const prioritySelect = document.getElementById('prioritySelect');
+  const taskList = document.getElementById('taskList');
+
+  const priorityClasses = {
+      low: 'bg-success',
+      medium: 'bg-warning',
+      high: 'bg-danger'
+  };
+
+  taskForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const taskText = taskInput.value.trim();
+      const priority = prioritySelect.value;
+      
+      if (taskText) {
+          addTask(taskText, priority);
+          taskInput.value = '';
+      }
+  });
+
+  function addTask(text, priority) {
+      const li = document.createElement('li');
+      li.className = 'list-group-item d-flex justify-content-between align-items-center';
+      
+      const taskContent = document.createElement('div');
+      taskContent.className = 'd-flex align-items-center flex-grow-1 me-3';
+      
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.className = 'form-check-input me-2';
+      checkbox.addEventListener('change', () => {
+          taskSpan.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
+      });
+
+      const taskSpan = document.createElement('span');
+      taskSpan.textContent = text;
+      taskSpan.className = 'me-2';
+
+      const priorityBadge = document.createElement('span');
+      priorityBadge.className = `badge ${priorityClasses[priority]} ms-2`;
+      priorityBadge.textContent = priority.charAt(0).toUpperCase() + priority.slice(1);
+
+      const deleteBtn = document.createElement('button');
+      deleteBtn.className = 'btn btn-danger btn-sm';
+      deleteBtn.innerHTML = '&times;';
+      deleteBtn.addEventListener('click', () => li.remove());
+
+      taskContent.appendChild(checkbox);
+      taskContent.appendChild(taskSpan);
+      taskContent.appendChild(priorityBadge);
+      li.appendChild(taskContent);
+      li.appendChild(deleteBtn);
+      taskList.appendChild(li);
+  }
+});
