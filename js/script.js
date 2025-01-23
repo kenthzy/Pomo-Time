@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
       priorityBadge.textContent = priority.charAt(0).toUpperCase() + priority.slice(1);
 
       const deleteBtn = document.createElement('button');
-      deleteBtn.className = 'btn btn-danger btn-sm';
+      deleteBtn.className = 'btn btn-light btx-task btn-sm';
       deleteBtn.innerHTML = '&times;';
       deleteBtn.addEventListener('click', () => li.remove());
 

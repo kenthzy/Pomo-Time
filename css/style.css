@@ -67,8 +67,9 @@ body {
 .btx{
     margin: 10px;
     border: none;
-    color: var(--text-color);
-    font-weight: bold;
+    color: var(--secondary-color);
+    font-weight: normal;
+    
 }
 .btn:hover{
     background-color: var(--text-color);
@@ -100,16 +101,6 @@ body {
 .btn:active {
     background-color: var(--secondary-color)!important;
     color: var(--text-color)!important;
-}
-.music-track {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-}
-iframe {
-    width: 75%;
-    height: 15vh;
-    border-radius:var(--big-roundness);
 }
 footer {
     display: flex; 
@@ -158,22 +149,13 @@ a:hover, i:hover {
 }
 
 .task-manager .card-header {
-    border: none; /* Light border for distinction */
+    border:none;
     color: white; /* Ensure text is readable */
 }
-
-.task-manager .form-control,
-.task-manager .form-select,
-.task-manager .btn {
-    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency */
-    border: 1px solid rgba(255, 255, 255, 0.5);
+hr {
+    border: 1.5px solid var(--secondary-color);
 }
-
-.task-manager .list-group {
-    background-color: rgba(255, 255, 255, 0.6); /* Slightly more transparent */
-}
-
-.task-manager .list-group-item {
-    background-color: rgba(255, 255, 255, 0.8); /* Ensure tasks are distinguishable */
-    border: 1px solid rgba(200, 200, 200, 0.5); /* Subtle borders */
+.btx-task {
+    color: red;
+    font-weight: bold;
 }

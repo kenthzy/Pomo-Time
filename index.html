@@ -24,7 +24,7 @@
         <a class="navbar-brand" href="/Pomo-Time/index.html">PomoTime</a>
         <div class="icons-container">
           <i class="fa-solid fa-wand-magic" id="toggle-theme-button"></i>
-          <a href="/Pomo-Time/about.html"><i class="fa-solid fa-book"></i></a>
+          <a href="/about.html"><i class="fa-solid fa-book"></i></a>
         </div>
       </div>
     </nav>
@@ -35,16 +35,16 @@
     <div class="container py-5 mb-0">
       <div class="main-content" style="background-color: transparent;">
         <div class="button-mode p-3">
-          <button type="button" class="btn btn-outline-success btx" style="background-color: transparent;">Pomodoro</button>
-          <button type="button" class="btn btn-outline-primary btx" style="background-color: transparent;">Short Break</button>
-          <button type="button" class="btn btn-outline-danger btx" style="background-color: transparent;">Long Break</button>
+          <button type="button" class="btn btn-outline-success btx">Pomodoro</button>
+          <button type="button" class="btn btn-outline-primary btx">Short Break</button>
+          <button type="button" class="btn btn-outline-danger btx">Long Break</button>
         </div>
         <div class="time-text" style="background-color: transparent;">
           <p style="background-color: transparent;">01:23</p>
         </div>
         <div class="button-action p-3">
-          <button type="button" class="btn btn-outline-warning btn-sm btx" style="background-color: transparent;">start</button>
-          <button type="button" class="btn btn-outline-warning btn-sm btx" style="background-color: transparent;">reset</button>
+          <button type="button" class="btn btn-outline-primary btn-sm btx">start</button>
+          <button type="button" class="btn btn-outline-primary btn-sm btx">reset</button>
         </div>
       </div>
     </div>
@@ -60,17 +60,20 @@
             <div class="card shadow bg-transparent">
                 <div class="card-header bg-transparent ">
                     <h1 class="h4 mb-0">Tasks</h1>
+                    <hr>
                 </div>
                 <div class="card-body bg-transparent">
                     <form id="taskForm" class="mb-4">
                         <div class="input-group mb-3">
-                            <input type="text" id="taskInput" class="form-control" placeholder="Enter a new task" required>
+                            <input type="text" id="taskInput" class="form-control" placeholder="Enter New Task" required>
                             <select id="prioritySelect" class="form-select" style="max-width: 130px;">
                                 <option value="low">Low</option>
                                 <option value="medium" selected>Medium</option>
                                 <option value="high">High</option>
                             </select>
-                            <button type="submit" class="btn btn-light task-btn">Add Task</button>
+                            <button type="submit" class="btn btn-dark task-btn">
+                              <i class="fa-thin fa-plus"></i>
+                            </button>
                         </div>
                     </form>
                     <ul id="taskList" class="list-group"></ul>
