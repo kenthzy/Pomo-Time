@@ -64,10 +64,10 @@ body {
     display: flex;
 }
 .btx{
-    margin: 10px;
+    justify-content: space-between;
     border: none;
     color: var(--secondary-color);
-    font-weight: normal;
+    
     
 }
 .btn:hover{
