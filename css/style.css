@@ -62,7 +62,6 @@ body {
 .button-mode {
     justify-content: center;
     display: flex;
-    flex-direction: row;    
 }
 .btx{
     margin: 10px;
