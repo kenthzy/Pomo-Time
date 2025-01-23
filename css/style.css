@@ -149,7 +149,7 @@ a:hover, i:hover {
 
 .task-manager .card-header {
     border:none;
-    color: white; /* Ensure text is readable */
+    color: white;
 }
 hr {
     border: 1.5px solid var(--secondary-color);
@@ -161,18 +161,18 @@ hr {
 .task-manager .form-control,
 .task-manager .form-select,
 .task-manager .list-group {
-    background-color: rgba(255, 255, 255, 0.6); /* Slightly more transparent */
+    background-color: rgba(255, 255, 255, 0.6); 
 }
 
 .task-manager .list-group-item {
-    background-color: var(--primary-background-color); /* Ensure tasks are distinguishable */
+    background-color: var(--primary-background-color); 
 }
 #taskInput, #prioritySelect{
-    border: 1px solid var(--secondary-color); /* Ensure input fields are visible */
+    border: 1px solid var(--secondary-color); 
 }
 #taskInput:focus, 
 #prioritySelect:focus {
-    outline: none; /* Remove default outline */
-    box-shadow: none; /* Remove any box-shadow if present */
-    border-color: transparent; /* Remove border color */
+    outline: none;
+    box-shadow: none; 
+    border-color: transparent;
 }
